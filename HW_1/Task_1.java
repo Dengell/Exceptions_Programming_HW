@@ -9,12 +9,13 @@ public class Task_1 {
      */
     public static void main(String[] args) {
         try {
-            Scanner sc = new Scanner(System.in);
-            System.out.print("Введите первое число: ");
-            int num1 = sc.nextInt();
-            System.out.print("Введите второе число: ");
-            int num2 = sc.nextInt();
-            System.out.printf("%d / %d = %d", num1, num2, division(num1, num2));
+            try (Scanner sc = new Scanner(System.in)) {
+                System.out.print("Введите первое число: ");
+                int num1 = sc.nextInt();
+                System.out.print("Введите второе число: ");
+                int num2 = sc.nextInt();
+                System.out.printf("%d / %d = %d", num1, num2, division(num1, num2));
+            }
         } catch (InputMismatchException e){
             System.out.println("Некорректный ввод!");
         }
